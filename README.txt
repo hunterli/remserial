@@ -28,7 +28,7 @@ Some examples:
 1) Give access to a RS232 device over a network.
 
 The computer with the serial port connected to the device (such as a
-data aquisition device) runs the remserial program:
+data acquisition device) runs the remserial program:
 
 	remserial -d -p 23000 -s "9600 raw" /dev/ttyS0 &
 
@@ -43,7 +43,7 @@ or set up as a system service with a file in /etc/rc.init/.
 2) Connect an RS232 device to a specified server.
 
 The computer with the serial port connected to the device (such as a
-data aquisition device) runs the remserial program:
+data acquisition device) runs the remserial program:
 
 	remserial -d -r server-name -p 23000 -s "9600 raw" /dev/ttyS0 &
 
@@ -55,14 +55,14 @@ different baud rates or other serial port settings.
 3) Connect a Linux program that needs a serial port to a remote serial port.
 
 Some programs are written to communicate directly with a serial port such
-as some data aquisition programs.  The remserial program can use
+as some data acquisition programs.  The remserial program can use
 pseudo-ttys to fool the program into thinking that it is talking to a
 real serial port on the local machine:
 
 	remserial -d -r server-name -p 23000 -l /dev/remserial1 /dev/ptmx &
 
 This creates a file called /dev/remserial1 which can be used by the
-data aquisition application as its serial port.  Any data sent or received
+data acquisition application as its serial port.  Any data sent or received
 is passed to the remote server-name on port 23000 where a computer configured
 in case number 1 above passes it to a real serial port.
 
